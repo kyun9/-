@@ -11,7 +11,7 @@ import hello.hellospring2.domain.Member;
 public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, MemberRepository {
 	
 	// 네이밍 규칙에 따라 쿼리를 짜준다.
-	// select m from Member m where m.name = ?
+	// JPQL : select m from Member m where m.name = ?
 	Optional<Member> findByName(String name);
 	
 }
