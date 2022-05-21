@@ -3,13 +3,12 @@ package hello.hellospring2.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import hello.hellospring2.domain.Member;
 import hello.hellospring2.repository.MemberRepository;
 
-
+@Transactional
 public class MemberService {
 //	private final MemberRepository memberRepository = new MemoryMemberRepository();
 	private final MemberRepository memberRepository;
