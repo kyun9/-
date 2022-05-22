@@ -1,12 +1,9 @@
 package hello.hellospring2;
 
-import javax.persistence.EntityManager;
-import javax.sql.DataSource;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import hello.hellospring2.repository.JpaMemberRepository;
+import hello.hellospring2.aop.TimeTraceAop;
 import hello.hellospring2.repository.MemberRepository;
 import hello.hellospring2.service.MemberService;
 
@@ -23,6 +20,12 @@ public class SpringConfig {
 		return new MemberService(memberRepository);
 	}
 
+	//AOP 사용한다 명시하는게 좋다.
+//	@Bean
+//	public TimeTraceAop timeTraceAop() {
+//		return new TimeTraceAop();
+//	}
+	
 	/* JPA
 	private final DataSource dataSource;
 	private final EntityManager em;
